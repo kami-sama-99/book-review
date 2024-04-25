@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+<form action="/submit" method="POST">
+    <div class="input-group mb-3">
+        <input type="text" name="title" class="form-control content" placeholder="Book Title" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" name="author" class="form-control content" placeholder="Author" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" name="isbn" class="form-control content" placeholder="ISBN Code" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    
+    <div class="mb-3">
+        <textarea type="text" name="review" class="form-control content" id="exampleFormControlTextarea1" rows="15" placeholder="Review"></textarea>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit Review</button>
+    </div>
+</form>
+</body>
+</html>

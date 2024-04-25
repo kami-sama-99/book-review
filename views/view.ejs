@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+    <% listItems.forEach(item => { %>
+        <% const value = item.isbn; %>
+        <div class="review-box">
+            <img src="" alt="<%= item.name %>" id="image-<%= value %>" class="cover-image">
+            <div class="text-box">
+                <h2 class="text"><%= item.name %></h2>
+                <h5 class="text">By <%= item.author %></h5>
+                <p class="text"><%= item.review %></p>
+            </div>
+            <script>
+                // Make API request using client-side JavaScript
+                fetch(`https://covers.openlibrary.org/b/isbn/<%= value %>-L.jpg`)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const imgUrl = URL.createObjectURL(blob);
+                        document.getElementById("image-<%= value %>").src = imgUrl;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching image:', error);
+                        document.getElementById("image-<%= value %>").alt = "Image not available";
+                    });
+            </script>
+        </div>
+    <% }); %>
+</div>
