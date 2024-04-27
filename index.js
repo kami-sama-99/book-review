@@ -8,7 +8,7 @@ const db = new pg.Client({
     database: "book_review",
     user: "postgres",
     host: "localhost",
-    password: "#$KryptoN$#1205",
+    password: "123456",
     port: 5432
 });
 const app = express();
